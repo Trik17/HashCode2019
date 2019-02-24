@@ -1,12 +1,18 @@
 public abstract class Problem {
 
-    public String file;
+    public String path;
+    public String input;
 
     public void read(){
-        
+
     }
 
     public abstract void setupProblem();
+
+    public Problem(String pathInput){
+        this.path = pathInput;
+
+    }
 
 
 
