@@ -15,6 +15,7 @@ public abstract class Problem {
         }catch (IOException e){
             e.printStackTrace();
         }
+        setupProblem();
     }
 
     public abstract void setupProblem();
