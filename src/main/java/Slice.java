@@ -7,12 +7,15 @@ public class Slice extends SubMatrix {
 
 
 
-    public Slice(int col, int row, int dimcol, int dimrow, int number_T, int number_M) {
+    public Slice(int col1, int row1, int col2, int row2, int dimcol, int dimrow, int number_T, int number_M) {
 
         //TODO: cotruttore inizializza una riga e una colonna con T o M
 
-        super(col, row, col, row, dimcol, dimrow);
+        super(col1, row1, col2, row2, dimcol, dimrow);
         this.number_T = number_T;
         this.number_M = number_M;
     }
+
+
+
 }

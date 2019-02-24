@@ -10,4 +10,8 @@ public class Pizza extends Problem {
     public void setupProblem() {
 
     }
+
+    public void Check(){
+        
+    }
 }
