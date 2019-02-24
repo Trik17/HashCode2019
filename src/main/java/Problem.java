@@ -9,6 +9,8 @@ public abstract class Problem {
 
     public abstract void setupProblem();
 
+
+
     public Problem(String pathInput){
         this.path = pathInput;
 
