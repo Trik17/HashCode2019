@@ -1,6 +1,6 @@
 public class Pizza extends Problem {
 
-    public int r, c, l, h;
+    public int dim_rows, dim_columns, l, h;
 
     public Pizza(String pathInput){
         super(pathInput);
