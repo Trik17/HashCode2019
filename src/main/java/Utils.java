@@ -1,5 +1,7 @@
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 import static java.lang.Math.sqrt;
@@ -16,8 +18,9 @@ public class Utils {
     }
 
 
-    public void optimization(List<Slide> slideShow){
-        int partial;
+    public static ArrayList<Slide> optimization(List<Slide> slideShow){
+        ArrayList<Slide> result = new ArrayList<>();
+        int partial = -1;
         Slide transition[] = new Slide[2];
         int count = 0;
         ArrayList<Slide> copy_slideShow = new ArrayList<>();
@@ -29,17 +32,27 @@ public class Utils {
             transition[0] = s1;
             copy_slideShow.remove(s1);
             int k = 0;
+            Slide s2 = copy_slideShow.get(0);
             while (count < k){
-                Slide s2 = copy_slideShow.get(k);
+                s2 = copy_slideShow.get(count);
                 int diff_a = Slide.diff(s1, s2);
                 int inter = Slide.intersection(s1, s2);
                 int diff_b = Slide.diff(s2, s1);
-                int 
-                
-
+                int min = Slide.min(diff_a, inter, diff_b);
+                if (min > partial){
+                    partial = min;
+                    transition[1] = s2;
+                }
+                count++;
+                k = Math.min(k, copy_slideShow.size() - 1);
 
             }
+            s1 = copy_slideShow.get(slideShow.indexOf(s2));
+            result.add(s1);
+            result.add(s2);
+
         }
+        return result;
     }
 
 

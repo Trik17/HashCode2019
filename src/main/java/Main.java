@@ -44,6 +44,7 @@ public class Main {
                 }
             }
         }
+        ss = Utils.optimization(ss);
         String submissionString;
         submissionString = ss.size() + "\n";
         for(Slide slide : ss){
