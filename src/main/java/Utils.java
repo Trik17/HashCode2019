@@ -50,6 +50,7 @@ public class Utils {
             }
             s1 = slideShow.get(slideShow.indexOf(transition[1]));
             result.add(transition[1]);
+            System.out.println(result.size());
 
         }
         return result;
