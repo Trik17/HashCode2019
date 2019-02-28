@@ -21,6 +21,7 @@ public class Cell {
     }
 
     public void setValue(char value) {
+        value = Character.toUpperCase(value);
         if (value!='M' && value!='T'){
             throw new IllegalArgumentException("Only Char, M or T.");
         }
