@@ -8,10 +8,13 @@ public class Main {
         prob.read();
         System.out.println("Hello");
         List<Photo> collection = prob.pictures;
-        List<Slide> slideShow;
+        SlideShow ss = new SlideShow();
         for(Photo picture : collection){
             Photo verticalP;
-            if(!picture.isVertical())
+            if(!picture.isVertical){
+                Slide s = new Slide(picture);
+                ss.add(s);
+            }
         }
 
 
