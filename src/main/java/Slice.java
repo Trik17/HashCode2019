@@ -18,7 +18,7 @@ public class Slice extends SubMatrix {
 
         for(int i = row1; i<row2; i++){
             for(int j = col1; j<col2; j++){
-                pizza.matrix[i][j]
+                pizza.matrix[i][j].isOccupied = true;
                 cells.add(pizza.matrix[i][j]);
             }
         }
@@ -29,7 +29,7 @@ public class Slice extends SubMatrix {
     }
     //todo costruttore più base & funzione per calcolare col1, etc...
 
-    public void addCell(Cell c){
+    public Slice addCell(Cell c){
        // Using the 4 numbers of the slice
        if(c.y < this.col1){
            // cell is on the left so we update the left column extending it to the left
@@ -48,12 +48,28 @@ public class Slice extends SubMatrix {
            this.row2 = c.x;
        }
        // now we need to check the integrity of the newly created slice while adding the cell to the slice
+       ArrayList<Cell> toBeAdded = new ArrayList<>();
        for(int i = row1; i<row2; i++){
             for(int j = col1; j<col2; j++){
-                if(cells){
-
+                if((!cells.contains(pizza.matrix[i][j]) && !pizza.matrix[i][j].isOccupied)){
+                    toBeAdded.add(pizza.matrix[i][j]);
+                }
+                else{
+                    return null;
                 }
             }
        }
+       for(Cell cell : toBeAdded){
+           if(cell.getValue() == 'M'){
+               number_M++;
+           }else{
+               number_T++;
+           }
+           pizza.matrix[cell.x][cell.y].isOccupied = true;
+           cells.add(cell);
+       }
+
+       // TODO: AGGIORNARE NUMBER T E NUMBER M
+       return this;
     }
 }
