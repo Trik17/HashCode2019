@@ -18,6 +18,7 @@ public class Utils {
     }
 
     public static ArrayList<Slide> optimization(List<Slide> slideShow){
+        int sum = 0;
         ArrayList<Slide> result = new ArrayList<>();
         Slide transition[] = new Slide[2];
         ArrayList<Slide> copy_slideShow = new ArrayList<>();
@@ -27,13 +28,12 @@ public class Utils {
         Slide s1 = slideShow.get(0);
         result.add(s1);
         int count;
+        int k = copy_slideShow.size()/32;
         while (copy_slideShow.size() - 1 > 0){
             transition[0] = s1;
             if (copy_slideShow.contains(s1)){
-                System.out.println("yes");
             }
             copy_slideShow.remove(copy_slideShow.indexOf(s1));
-            int k = 5;
             count = 0;
             Slide s2 = copy_slideShow.get(0);
             int partial = -1;
@@ -53,11 +53,15 @@ public class Utils {
                 k = Math.min(k, copy_slideShow.size() - 1);
 
             }
+            if (partial > 0){
+                sum+= partial;
+            }
             s1 = transition[1];
             result.add(transition[1]);
             System.out.println(result.size());
 
         }
+        System.out.println("-------SUM: " + sum);
         return result;
     }
 
