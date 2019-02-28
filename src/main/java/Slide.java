@@ -5,7 +5,7 @@ public class Slide {
     public Photo pic1;
     public Photo pic2;
     public boolean isVertical;
-    public HashSet<String> tags;
+    public HashSet<String> tags = new HashSet<>();
 
 
 
@@ -13,8 +13,9 @@ public class Slide {
         this.pic1 = pic1;
         this.pic2 = pic2;
         isVertical = true;
+        tags.addAll(pic1.tags);
+        tags.addAll(pic2.tags);
         //todo check that they are vertical?
-        //todo union of tags
     }
 
     public Slide(Photo pic){
@@ -23,4 +24,11 @@ public class Slide {
         pic2=null;
         tags=pic.tags;
     }
+
+    public static int intersection(Slide s1, Slide s2){
+        //todo
+        
+        return 0;
+    }
+
 }
