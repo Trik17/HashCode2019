@@ -70,12 +70,17 @@ public class Problem {
             numTags = Integer.parseInt(l[1]);
 
             for (int j = 0; j < numTags; j++) {
-                picTags.add(l[j+2]);
+                //System.out.println(l[j]);
+                //System.out.println(l[j+2]);
+                boolean a = picTags.add(l[j+2]);
+                if (!a){
+                    System.out.println("ERROREEEEEEEEEEE");
+                }
             }
 
 
             pictures.add(new Photo(i-1,picIsV,picTags));
-            picTags.clear();
+            picTags = new HashSet<>();
         }
 
 
@@ -88,15 +93,16 @@ public class Problem {
 
     public void printInput(){
         for (int i = 0; i < pictures.size(); i++) {
-            System.out.println("\n");
+            //System.out.println("\n");
             String print;
             if (pictures.get(i).isVertical){
-                print = "V";
+                print = "V ";
             }else {
-                print = "H";
+                print = "H ";
             }
             print = print + Integer.toString(pictures.get(i).tags.size());
             for (String s : pictures.get(i).tags) {
+                print = print + " ";
                 print = print + s;
             }
             System.out.println(print);
@@ -112,8 +118,11 @@ public class Problem {
     public static void main (String args[]){
         Problem p = new Problem();
         p.read();
-
         p.printInput();
+        //System.out.println("ZZZZZZZZZZZZZZZZZ");
+
+        //System.out.println(p.pictures.size());
+        //System.out.println(p.pictures.get(0).tags.size());
 
     }
 }

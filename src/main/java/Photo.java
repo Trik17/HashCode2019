@@ -5,7 +5,7 @@ public class Photo {
 
     public int id;
     public boolean isVertical;
-    public HashSet<String > tags; //= new HashSet<>();
+    public HashSet<String > tags= new HashSet<>();
 
     public Photo(int id, boolean isVertical, HashSet<String > tags){
         this.id=id;
@@ -13,4 +13,9 @@ public class Photo {
         this.tags=tags;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
+        //todo
+    }
 }
