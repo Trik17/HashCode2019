@@ -1,6 +1,4 @@
-package PizzaProblem;
-
-public class Cell {
+/*public class Cell {
 
     public int x; //row
     public int y; //col
@@ -51,3 +49,4 @@ public class Cell {
         return false;
     }
 }
+*/

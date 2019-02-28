@@ -1,10 +1,8 @@
-package PizzaProblem;
-
-import java.util.ArrayList;
+/*import java.util.ArrayList;
 import java.util.List;
 
 public class Logic {
-    //todo: PizzaProblem.Slice.java
+    //todo: Slice.java
 
     int countM, countT, countVisited = 0;
     Pizza pizza;
@@ -15,7 +13,7 @@ public class Logic {
         this.pizza = new Pizza(path);
         pizza.read(); //setup problem is already called inside this
 
-        //PizzaProblem.Cell initialPosition = getInitialPos();
+        //Cell initialPosition = getInitialPos();
         //int x =initialPosition.x;
         //int y = initialPosition.y;
         currentCell = getInitialPos();
@@ -46,13 +44,13 @@ public class Logic {
         Slice currentSlice = new Slice(currentCell);
         boolean check = false;
         while (currentSlice.number_M< Pizza.l && currentSlice.number_T< Pizza.l){
-            if(currentSlice.number_M<Pizza.l){
+            if(currentSlice.number_M< Pizza.l){
                 check = M(currentSlice);
                 if (!check){
                     return null;
                 }
             }
-            if(currentSlice.number_T<Pizza.l){
+            if(currentSlice.number_T< Pizza.l){
                 check = T(currentSlice);
                 if (!check){
                     return null;
@@ -68,7 +66,7 @@ A:
 In Java, il passaggio degli argomenti avviene sempre per valore.
 Tuttavia, in Java gli oggetti non vengono mai passati come argomento; invece, vengono sempre passati i loro reference.
 Quindi, non ha senso chiedere come vengano passati gli oggetti, perché gli oggetti non vengono mai passati.
-     */
+
 
     private boolean M(Slice currentS){
         currentS = takeNearestAcceptable(currentS,'M');
@@ -103,8 +101,8 @@ Quindi, non ha senso chiedere come vengano passati gli oggetti, perché gli ogge
     }
 
     public static void main (String args[]){
-        /*System.out.println("Started");
-        PizzaProblem.Pizza prova = new PizzaProblem.Pizza(".\\HashCode19_prep\\d_big.in");
+        System.out.println("Started");
+        Pizza prova = new Pizza(".\\HashCode19_prep\\d_big.in");
         prova.read();
 
         for (int i = 0; i < prova.dim_rows; i++) {
@@ -122,9 +120,9 @@ Quindi, non ha senso chiedere come vengano passati gli oggetti, perché gli ogge
         if (true){
             return;
         }
-        */
+
         Logic l = new Logic();
         l.algorithm(".\\HashCode19_prep\\a_example.in");
     }
 
-}
+}*/

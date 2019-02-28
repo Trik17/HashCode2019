@@ -1,6 +1,4 @@
-package PizzaProblem;
-
-public class Pizza extends Problem {
+/*public class Pizza extends Problem {
 
     public static int dim_rows, dim_columns, l, h;
     public char[][] charMatrix;
@@ -39,4 +37,4 @@ public class Pizza extends Problem {
         System.out.println("Problem setted");
     }
 
-}
+}*/

@@ -1,6 +1,4 @@
-package PizzaProblem;
-
-import java.util.ArrayList;
+/*import java.util.ArrayList;
 import java.util.List;
 
 public class Slice extends SubMatrix {
@@ -10,7 +8,7 @@ public class Slice extends SubMatrix {
     public List<Cell> cells;
     public Pizza pizza;
 
-    //ATTENZIONE A QUESTO COSTRUTTORE! METTE AUTOMATICAMENTE TUTTE LE CELLE SELEZIONATE COME isOccupied nella PizzaProblem.Pizza
+    //ATTENZIONE A QUESTO COSTRUTTORE! METTE AUTOMATICAMENTE TUTTE LE CELLE SELEZIONATE COME isOccupied nella Pizza
     public Slice(int col1, int row1, int col2, int row2, int dimcol, int dimrow, int number_T, int number_M, Pizza pizza) {
 
         super(col1, row1, col2, row2, dimcol, dimrow);
@@ -94,4 +92,4 @@ public class Slice extends SubMatrix {
        // TODO: AGGIORNARE NUMBER T E NUMBER M
        return this;
     }
-}
+}*/
