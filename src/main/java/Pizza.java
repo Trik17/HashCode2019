@@ -2,7 +2,7 @@
 
 public class Pizza extends Problem {
 
-    public int dim_rows, dim_columns, l, h;
+    public static int dim_rows, dim_columns, l, h;
     public char[][] charMatrix;
     public static Cell[][] matrix;
 
