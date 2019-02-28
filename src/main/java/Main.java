@@ -17,7 +17,7 @@ public class Main {
         String d ="d_pet_pictures";
         String e ="e_shiny_selfies";
 
-        String currentInput = d;
+        String currentInput = e;// TODO usare questo per selezionare l'input
 
         Problem prob = new Problem(".\\Input\\"+currentInput+".txt");
         List<Slide> ss = new ArrayList<Slide>();
@@ -28,6 +28,7 @@ public class Main {
         //SlideShow ss = new SlideShow();
         Photo verticalP = null;
         for(Photo picture : collection){
+
             if(!picture.isVertical){
                 Slide s = new Slide(picture);
                 ss.add(s);
@@ -38,6 +39,7 @@ public class Main {
                 }
                 else {
                     Slide s = new Slide(verticalP, picture);
+                    verticalP = null;
                     ss.add(s);
                 }
             }
