@@ -7,8 +7,19 @@ import java.util.List;
 
 public class Main {
 
+
+
     public static void main (String args[]){
-        Problem prob = new Problem();
+
+        String a ="a_example";
+        String b ="b_lovely_landscapes";
+        String c ="c_memorable_moments";
+        String d ="d_pet_pictures";
+        String e ="e_shiny_selfies";
+
+        String currentInput = b;
+
+        Problem prob = new Problem(".\\Input\\"+currentInput+".txt");
         List<Slide> ss = new ArrayList<Slide>();
         prob.read();
         //System.out.println("Hello");
@@ -43,14 +54,14 @@ public class Main {
 
         }
         System.out.println(submissionString);
-        File f = new File(".\\Submission\\submission.txt");
+        File f = new File(".\\Submission\\submission"+currentInput+".txt");
         try {
             FileWriter fileWriter = new FileWriter(f);
             fileWriter.write(submissionString);
             fileWriter.flush();
             fileWriter.close();
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (IOException exc) {
+            exc.printStackTrace();
         }
 
 

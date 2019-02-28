@@ -116,7 +116,7 @@ public class Problem {
     }
 
     public static void main (String args[]){
-        Problem p = new Problem();
+        Problem p = new Problem(".\\Input\\b_lovely_landscapes.txt");
         p.read();
         p.printInput();
         //System.out.println("ZZZZZZZZZZZZZZZZZ");
