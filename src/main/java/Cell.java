@@ -33,7 +33,17 @@ public class Cell {
 
     @Override
     public boolean equals(Object obj) {
-        //todo
-        return super.equals(obj);
+        if (this.x == ((Cell) obj).x && this.y == ((Cell) obj).y) {
+            if (this.value != ((Cell) obj).value){
+                try {
+                    throw new Exception();
+                } catch (Exception e) {
+                    System.out.println("There are two instances of a cell with different values!");
+                    e.printStackTrace();
+                }
+            }
+            return true;
+        }
+        return false;
     }
 }
