@@ -31,9 +31,10 @@ public class Utils {
             int k = 0;
             while (count < k){
                 Slide s2 = copy_slideShow.get(k);
-                int diff_a = diff();
-                int inter = intersection();
-                int diff_b = diff();
+                int diff_a = Slide.diff(s1, s2);
+                int inter = Slide.intersection(s1, s2);
+                int diff_b = Slide.diff(s2, s1);
+                int 
                 
 
 
