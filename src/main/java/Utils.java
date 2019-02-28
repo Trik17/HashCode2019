@@ -19,7 +19,6 @@ public class Utils {
 
     public static ArrayList<Slide> optimization(List<Slide> slideShow){
         ArrayList<Slide> result = new ArrayList<>();
-        int partial = -1;
         Slide transition[] = new Slide[2];
         ArrayList<Slide> copy_slideShow = new ArrayList<>();
         for (Slide s : slideShow){
@@ -30,10 +29,15 @@ public class Utils {
         int count;
         while (copy_slideShow.size() - 1 > 0){
             transition[0] = s1;
-            copy_slideShow.remove(s1);
-            int k = copy_slideShow.size()/4;
+            if (copy_slideShow.contains(s1)){
+                System.out.println("yes");
+            }
+            copy_slideShow.remove(copy_slideShow.indexOf(s1));
+            int k = 5;
             count = 0;
             Slide s2 = copy_slideShow.get(0);
+            int partial = -1;
+
             while (count < k){
                 s2 = copy_slideShow.get(count);
                 int diff_a = Slide.diff(s1, s2);
@@ -44,11 +48,12 @@ public class Utils {
                     partial = min;
                     transition[1] = s2;
                 }
+
                 count++;
                 k = Math.min(k, copy_slideShow.size() - 1);
 
             }
-            s1 = slideShow.get(slideShow.indexOf(transition[1]));
+            s1 = transition[1];
             result.add(transition[1]);
             System.out.println(result.size());
 

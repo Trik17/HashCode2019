@@ -71,19 +71,23 @@ public class Slide {
 
     @Override
     public boolean equals(Object obj) {
+        //System.out.println("chiamata");
         if (this.isVertical){
             if (!((Slide) obj).isVertical)
                 return false;
             if (this.pic1.id==((Slide) obj).pic1.id || this.pic1.id==((Slide) obj).pic2.id ){
                 if (this.pic2.id==((Slide) obj).pic1.id || this.pic2.id==((Slide) obj).pic2.id ){
+                    //System.out.println("UGUALI");
                     return true;
                 }
             }
         }else {
             if (((Slide) obj).isVertical)
                 return false;
-            if (this.pic1.id==((Slide) obj).pic1.id)
+            if (this.pic1.id==((Slide) obj).pic1.id) {
+                //System.out.println("UGUALI");
                 return true;
+            }
         }
 
         return false;
