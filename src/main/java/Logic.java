@@ -40,10 +40,57 @@ public class Logic {
 
     private Slice generateCorrectSlice(Cell currentCell){
         Slice currentSlice = new Slice(currentCell);
-
-        return null;//todo
+        boolean check = false;
+        while (currentSlice.number_M< Pizza.l && currentSlice.number_T< Pizza.l){
+            if(currentSlice.number_M<Pizza.l){
+                check = M(currentSlice);
+                if (!check){
+                    return null;
+                }
+            }
+            if(currentSlice.number_T<Pizza.l){
+                check = T(currentSlice);
+                if (!check){
+                    return null;
+                }
+            }
+        }
+        return currentSlice;
     }
 
+    /*
+    Q: In Java, gli oggetti vengono passati ai metodi per valore o per riferimento? E i valori dei tipi base?
+A:
+In Java, il passaggio degli argomenti avviene sempre per valore.
+Tuttavia, in Java gli oggetti non vengono mai passati come argomento; invece, vengono sempre passati i loro reference.
+Quindi, non ha senso chiedere come vengano passati gli oggetti, perché gli oggetti non vengono mai passati.
+     */
+
+    private boolean M(Slice currentS){
+        currentS = takeNearestAcceptable(currentS,'M');
+        if (currentS == null){
+            currentCell.isVisited = true;
+            return false;
+        }
+        return true;
+    }
+
+    private boolean T(Slice currentS){
+        currentS = takeNearestAcceptable(currentS,'T');
+        if (currentS == null){
+            currentCell.isVisited = true;
+            return false;
+        }
+        return true;
+    }
+
+    private Slice takeNearestAcceptable(Slice slice, char content){
+        boolean notFound = true;
+        while (notFound){
+            //todo serve la loro mappa
+        }
+        return null;//todo
+    }
 
     private Cell getInitialPos() {
         return new Cell(0,0);
