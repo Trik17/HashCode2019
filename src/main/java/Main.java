@@ -1,4 +1,6 @@
+import java.io.File;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 
 public class Main {
@@ -6,9 +8,16 @@ public class Main {
     public static void main (String args[]){
         //Problem prob = new Problem();
         List<Slide> ss = new ArrayList<Slide>();
-        Photo p1 = new Photo();
+        Photo p1 = new Photo(1,false,new HashSet<String>());
+        Photo p2 = new Photo(2,true,new HashSet<String>());
+        Photo p3 = new Photo(3,false,new HashSet<String>());
+        Photo p4 = new Photo(4,true,new HashSet<String>());
         Slide s1 = new Slide(p1);
+        Slide s2 = new Slide(p2,p4);
+        Slide s3 = new Slide(p3);
         ss.add(s1);
+        ss.add(s2);
+        ss.add(s3);
         /*prob.read();
         //System.out.println("Hello");
         List<Photo> collection = prob.pictures;
@@ -39,10 +48,11 @@ public class Main {
             else{
                 submissionString += slide.pic1.id + " " + slide.pic2.id + "\n";
             }
-            System.out.println(submissionString);
 
         }
-
+        System.out.println(submissionString);
+        /*File f = new File();
+        PrintWriter out = new PrintWriter("filename.txt");*/
 
 
     }
