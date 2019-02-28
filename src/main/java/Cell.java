@@ -4,6 +4,7 @@ public class Cell {
     public int y; //col
     private char value; //it s
     public boolean isVisited = false;
+    public boolean isOccupied = false;
 
     public Cell(int x,int y){
         this.x=x;
