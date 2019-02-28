@@ -17,6 +17,7 @@ public class Main {
         //SlideShow ss = new SlideShow();
         Photo verticalP = null;
         for(Photo picture : collection){
+
             if(!picture.isVertical){
                 Slide s = new Slide(picture);
                 ss.add(s);
@@ -27,6 +28,7 @@ public class Main {
                 }
                 else {
                     Slide s = new Slide(verticalP, picture);
+                    verticalP = null;
                     ss.add(s);
                 }
             }
