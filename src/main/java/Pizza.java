@@ -36,6 +36,7 @@ public class Pizza extends Problem {
                 matrix[i][j] = new Cell(i,j,charArray[j]);
             }
         }
+        System.out.println("Problem setted");
     }
 
 }

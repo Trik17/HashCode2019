@@ -14,13 +14,16 @@ public class Logic {
         this.pizza = new Pizza(path);
         pizza.read(); //setup problem is already called inside this
 
-        Cell initialPosition = getInitialPos();
+        //Cell initialPosition = getInitialPos();
         //int x =initialPosition.x;
         //int y = initialPosition.y;
-        currentCell = initialPosition;
+        currentCell = getInitialPos();
         List<Slice> sol = new ArrayList<>();
         while(countVisited<(pizza.dim_columns*pizza.dim_rows)){
             countVisited++;
+            if (currentCell==null){
+                System.out.println("it's null: error");
+            }
             if(!currentCell.isVisited) {
                 Slice newSlice = generateCorrectSlice(currentCell);
                 if (newSlice != null) {
@@ -88,16 +91,18 @@ Quindi, non ha senso chiedere come vengano passati gli oggetti, perché gli ogge
         boolean notFound = true;
         while (notFound){
             //todo serve la loro mappa
+            return null;
         }
         return null;//todo
     }
 
     private Cell getInitialPos() {
-        return new Cell(0,0);
+        Cell c = new Cell(0,0);
+        return c;
     }
 
     public static void main (String args[]){
-        System.out.println("Started");
+        /*System.out.println("Started");
         Pizza prova = new Pizza(".\\HashCode19_prep\\d_big.in");
         prova.read();
 
@@ -116,7 +121,7 @@ Quindi, non ha senso chiedere come vengano passati gli oggetti, perché gli ogge
         if (true){
             return;
         }
-
+        */
         Logic l = new Logic();
         l.algorithm(".\\HashCode19_prep\\a_example.in");
     }
