@@ -26,4 +26,14 @@ public class Cell {
         }
         this.value = value;
     }
+
+    public static double cellDistance(Cell c1, Cell c2){
+        return Utils.distance(c1.x,c2.x,c1.y,c2.y);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        //todo
+        return super.equals(obj);
+    }
 }
