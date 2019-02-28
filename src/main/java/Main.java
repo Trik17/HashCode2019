@@ -1,4 +1,6 @@
 import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -51,8 +53,15 @@ public class Main {
 
         }
         System.out.println(submissionString);
-        /*File f = new File();
-        PrintWriter out = new PrintWriter("filename.txt");*/
+        File f = new File(".\\Submission\\submission.txt");
+        try {
+            FileWriter fileWriter = new FileWriter(f);
+            fileWriter.write(submissionString);
+            fileWriter.flush();
+            fileWriter.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
 
     }
