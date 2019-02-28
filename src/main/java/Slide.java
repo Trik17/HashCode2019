@@ -27,8 +27,19 @@ public class Slide {
 
     public static int intersection(Slide s1, Slide s2){
         //todo
-        
+
         return 0;
+    }
+
+    public static int diff(Slide s1, Slide s2){
+        //numero di tag in S1 che non sono in s2
+        return 0;
+        //todo
+    }
+
+    public static int min(int n1, int n2, int n3){
+        return 0;
+        //todo
     }
 
 }
