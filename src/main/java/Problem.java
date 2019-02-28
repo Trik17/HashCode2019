@@ -5,6 +5,7 @@ import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 
 public class Problem {
@@ -50,35 +51,43 @@ public class Problem {
         String[] inputLines = this.input.split(delims);
         int numPics = Integer.parseInt(inputLines[0]);
 
-        for (int i = 1; i < numPics+1; i++) {
-
-        }
         delims = "[ ]";
-        String[] t2 = inputLines[0].split(delims);
-        dim_rows = Integer.parseInt(t2[0]);
-        dim_columns = Integer.parseInt(t2[1]);
-        l = Integer.parseInt(t2[2]);
-        h = Integer.parseInt(t2[3]);
-
-
-
-        charMatrix = new char[dim_rows][dim_columns];
-        matrix = new Cell[dim_rows][dim_columns];
-
-        char[] charArray;
-
-        for (int i = 0; i < dim_rows; i++) {
-            charArray = inputLines[i+1].toCharArray();
-            for (int j = 0; j < dim_columns; j++) {
-                charMatrix[i][j] = charArray[j];
-                matrix[i][j] = new Cell(i,j,charArray[j]);
+        boolean picIsV;
+        HashSet<String > picTags=new HashSet<>();
+        String[] l;
+        char p;
+        int numTags;
+        for (int i = 1; i < numPics+1; i++) {
+            //Photo(int id, boolean isVertical, HashSet<String > tags)
+            //id = i-1
+            l = inputLines[i].split((delims));
+            p = l[0].charAt(0);
+            if(p=='H'){
+                picIsV=false;
+            }else {
+                picIsV=true;
             }
+            numTags = Integer.parseInt(l[1]);
+
+            for (int j = 0; j < numTags; j++) {
+                picTags.add(l[j+2]);
+            }
+
+
+            pictures.add(new Photo(i-1,picIsV,picTags));
+            picTags.clear();
         }
+
+
         System.out.println("Problem setted");
     };
 
     public Problem(){
         this.path = ".\\Input\\a_example.txt";
+    }
+
+    public void printInput(){
+        
     }
 
 
