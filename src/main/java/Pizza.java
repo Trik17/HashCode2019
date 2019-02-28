@@ -16,10 +16,11 @@ public class Pizza extends Problem {
 
         delims = "[ ]";
         String[] t2 = tokens[0].split(delims);
+        System.out.println(t2[3].length());
         dim_rows = Integer.parseInt(t2[0]);
         dim_columns = Integer.parseInt(t2[1]);
         l = Integer.parseInt(t2[2]);
-        h = Integer.parseInt(t2[3]);
+        h = Integer.parseInt(Character.toString(t2[3].charAt(0)));
 
         matrix = new char[dim_rows][dim_columns];
         char[] charArray;

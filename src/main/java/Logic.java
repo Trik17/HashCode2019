@@ -1,13 +1,9 @@
 public class Logic {
 
     public static void main (String args[]){
-        System.out.println("Logic Guys");
-
-        Pizza prova = new Pizza("C:\\Users\\andre\\IdeaProjects\\HashCode2019\\HashCode19_prep\\a_example.in");
-
-        prova.read();
-
-
+        System.out.println("Started");
+        //Pizza prova = new Pizza("C:\\Users\\andre\\IdeaProjects\\HashCode2019\\HashCode19_prep\\a_example.in");
+        //prova.read();
         /*
         for (int i = 0; i < prova.dim_rows; i++) {
             for (int j = 0; j < prova.dim_columns; j++) {
@@ -15,7 +11,14 @@ public class Logic {
             }
         }
         */
+        Logic l = new Logic();
+        l.algorithm("");
 
+
+
+    }
+
+    public void algorithm(String path){
 
     }
 }
