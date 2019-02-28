@@ -31,7 +31,7 @@ public class Utils {
         while (copy_slideShow.size() - 1 > 0){
             transition[0] = s1;
             copy_slideShow.remove(s1);
-            int k = slideShow.size();
+            int k = copy_slideShow.size();
             count = 0;
             Slide s2 = copy_slideShow.get(0);
             while (count < k){
