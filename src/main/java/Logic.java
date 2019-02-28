@@ -47,12 +47,13 @@ public class Logic {
 
     public static void main (String args[]){
         System.out.println("Started");
-        Pizza prova = new Pizza(".\\HashCode19_prep\\a_example.in");
+        Pizza prova = new Pizza(".\\HashCode19_prep\\d_big.in");
         prova.read();
 
         for (int i = 0; i < prova.dim_rows; i++) {
             for (int j = 0; j < prova.dim_columns; j++) {
                 System.out.println(prova.charMatrix[i][j]);
+
             }
         }
 
