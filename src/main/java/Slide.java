@@ -26,16 +26,34 @@ public class Slide {
     }
 
     public static int intersection(Slide s1, Slide s2){
-        //todo
+        //return the number of tags common between s1 and s2
 
-        return 0;
+
+        // Retains only the elements in this set that are contained in the specified collection (optional operation).
+        // In other words, removes from this set all of its elements that
+        // are not contained in the specified collection.
+        // If the specified collection is also a set,
+        // this operation effectively modifies this set so that its value is the intersection of the two sets.
+        HashSet<String> res =new HashSet<>();
+        res.addAll(s1.tags);
+        res.retainAll(s2.tags);
+        return res.size();
     }
 
     public static int diff(Slide s1, Slide s2){
         //numero di tag in S1 che non sono in s2
-        return 0;
-        //todo
+
+        //Removes from this set all of its elements that are contained in the specified collection (optional operation).
+        // If the specified collection is also a set, this operation effectively modifies this set
+        // so that its value is the asymmetric set difference of the two sets.
+
+        HashSet<String> res =new HashSet<>();
+        res.addAll(s1.tags);
+        res.removeAll(s2.tags);
+        return res.size();
     }
+
+
 
     public static int min(int n1, int n2, int n3){
         int smallest = Math.min(n1, Math.min(n2, n3));
