@@ -3,7 +3,7 @@ import java.util.List;
 
 public class SlideShow {
 
-    List<Photo> pictures = new ArrayList<>();
+    List<Slide> slides = new ArrayList<>();
 
 
 }
