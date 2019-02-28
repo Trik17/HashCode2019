@@ -13,6 +13,12 @@ public class Photo {
         this.tags=tags;
     }
 
+    public static int union(Photo p1, Photo p2){
+        //todo
+        // ritorna il numeor degli elementi dei tag delle 2 foto
+        return 0;
+    }
+
     @Override
     public boolean equals(Object obj) {
         return super.equals(obj);
