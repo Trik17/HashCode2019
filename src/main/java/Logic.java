@@ -37,9 +37,13 @@ public class Logic {
     private Cell nextCell(Cell currentCell){
         return null;//todo
     }
+
     private Slice generateCorrectSlice(Cell currentCell){
+        Slice currentSlice = new Slice(currentCell);
+
         return null;//todo
     }
+
 
     private Cell getInitialPos() {
         return new Cell(0,0);

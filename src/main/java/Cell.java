@@ -4,6 +4,7 @@ public class Cell {
     public int y; //col
     private char value; //it s
     public boolean isVisited = false;
+    public boolean isOccupied = false;
 
     public Cell(int x,int y){
         this.x=x;
@@ -21,6 +22,7 @@ public class Cell {
     }
 
     public void setValue(char value) {
+        value = Character.toUpperCase(value);
         if (value!='M' && value!='T'){
             throw new IllegalArgumentException("Only Char, M or T.");
         }
@@ -33,7 +35,17 @@ public class Cell {
 
     @Override
     public boolean equals(Object obj) {
-        //todo
-        return super.equals(obj);
+        if (this.x == ((Cell) obj).x && this.y == ((Cell) obj).y) {
+            if (this.value != ((Cell) obj).value){
+                try {
+                    throw new Exception();
+                } catch (Exception e) {
+                    System.out.println("There are two instances of a cell with different values!");
+                    e.printStackTrace();
+                }
+            }
+            return true;
+        }
+        return false;
     }
 }
