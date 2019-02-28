@@ -43,7 +43,7 @@ public class Slice extends SubMatrix {
 
         this.pizza = pizza;
     }
-    //todo costruttore più base & funzione per calcolare col1, etc...
+    //t odo costruttore più base & funzione per calcolare col1, etc...
 
     public Slice addCell(Cell c){
        // Using the 4 numbers of the slice
@@ -89,7 +89,7 @@ public class Slice extends SubMatrix {
            cells.add(cell);
        }
 
-       // TODO: AGGIORNARE NUMBER T E NUMBER M
+       // T ODO: AGGIORNARE NUMBER T E NUMBER M
        return this;
     }
 }*/

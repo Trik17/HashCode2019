@@ -2,7 +2,7 @@
 import java.util.List;
 
 public class Logic {
-    //todo: Slice.java
+    //t odo: Slice.java
 
     int countM, countT, countVisited = 0;
     Pizza pizza;
@@ -37,7 +37,7 @@ public class Logic {
     }
 
     private Cell nextCell(Cell currentCell){
-        return null;//todo
+        return null;//t odo
     }
 
     private Slice generateCorrectSlice(Cell currentCell){
@@ -89,10 +89,10 @@ Quindi, non ha senso chiedere come vengano passati gli oggetti, perché gli ogge
     private Slice takeNearestAcceptable(Slice slice, char content){
         boolean notFound = true;
         while (notFound){
-            //todo serve la loro mappa
+            //t odo serve la loro mappa
             return null;
         }
-        return null;//todo
+        return null;//t odo
     }
 
     private Cell getInitialPos() {

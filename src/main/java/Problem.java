@@ -45,7 +45,6 @@ public class Problem {
     }
 
     private void setupProblem(){
-        //todo
         String delims = "[\n]";
         //tokens sono le varie righe
         String[] inputLines = this.input.split(delims);
