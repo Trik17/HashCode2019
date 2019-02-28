@@ -11,6 +11,7 @@ public abstract class Problem {
     public String path;
     public String input;
     public List<Photo> pictures;
+    //String path= ".\\Input\\a_example.txt";
 
     public void read(){
         try

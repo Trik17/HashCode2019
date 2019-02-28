@@ -7,6 +7,9 @@ public class Slide {
 
 
     public Slide(Photo pic1, Photo pic2){
+        this.pic1 = pic1;
+        this.pic2 = pic2;
+        isVertical = true;
 
     }
 }
