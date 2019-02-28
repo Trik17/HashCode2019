@@ -11,21 +11,20 @@ public class Slide {
 
     public Slide(Photo pic1, Photo pic2){
 
-        /*if (pic1.isVertical){
+        if (!pic1.isVertical || !pic2.isVertical){
             try {
                 throw new Exception();
             } catch (Exception e) {
-                System.out.println("There are two instances of a cell with different values!");
+                System.out.println("You are adding 2 pictures to a Slide, and one of them (at leas) is not vertical");
                 e.printStackTrace();
             }
-        }*/
+        }
 
         this.pic1 = pic1;
         this.pic2 = pic2;
         isVertical = true;
         tags.addAll(pic1.tags);
         tags.addAll(pic2.tags);
-        //todo check that they are vertical?
     }
 
     public Slide(Photo pic){
