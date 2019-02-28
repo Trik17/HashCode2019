@@ -22,16 +22,18 @@ public class Utils {
         ArrayList<Slide> result = new ArrayList<>();
         int partial = -1;
         Slide transition[] = new Slide[2];
-        int count = 0;
         ArrayList<Slide> copy_slideShow = new ArrayList<>();
         for (Slide s : slideShow){
             copy_slideShow.add(s);
         }
         Slide s1 = slideShow.get(0);
-        while (copy_slideShow.size() > 0){
+        result.add(s1);
+        int count;
+        while (copy_slideShow.size() - 1 > 0){
             transition[0] = s1;
             copy_slideShow.remove(s1);
-            int k = 0;
+            int k = slideShow.size();
+            count = 0;
             Slide s2 = copy_slideShow.get(0);
             while (count < k){
                 s2 = copy_slideShow.get(count);
@@ -47,8 +49,7 @@ public class Utils {
                 k = Math.min(k, copy_slideShow.size() - 1);
 
             }
-            s1 = copy_slideShow.get(slideShow.indexOf(s2));
-            result.add(s1);
+            s1 = slideShow.get(slideShow.indexOf(s2));
             result.add(s2);
 
         }
