@@ -1,3 +1,5 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
@@ -11,11 +13,29 @@ public abstract class Problem {
     public void read(){
         try
         {
-            input  = new String(Files.readAllBytes(Paths.get(path)));
+            input = readFile(path);
+            //input  = new String(Files.readAllBytes(Paths.get(path)));
         }catch (IOException e){
             e.printStackTrace();
         }
         setupProblem();
+    }
+
+    private String readFile(String fileName) throws IOException {
+        BufferedReader br = new BufferedReader(new FileReader(fileName));
+        try {
+            StringBuilder sb = new StringBuilder();
+            String line = br.readLine();
+
+            while (line != null) {
+                sb.append(line);
+                sb.append("\n");
+                line = br.readLine();
+            }
+            return sb.toString();
+        } finally {
+            br.close();
+        }
     }
 
     public abstract void setupProblem();
