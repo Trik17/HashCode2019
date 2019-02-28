@@ -94,11 +94,11 @@ public class Problem {
     public void printInput(){
         for (int i = 0; i < pictures.size(); i++) {
             //System.out.println("\n");
-            String print;
+            String print = Integer.toString(pictures.get(i).id);
             if (pictures.get(i).isVertical){
-                print = "V ";
+                print = print+" V ";
             }else {
-                print = "H ";
+                print = print+" H ";
             }
             print = print + Integer.toString(pictures.get(i).tags.size());
             for (String s : pictures.get(i).tags) {
