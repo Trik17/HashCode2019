@@ -48,8 +48,8 @@ public class Utils {
                 k = Math.min(k, copy_slideShow.size() - 1);
 
             }
-            s1 = slideShow.get(slideShow.indexOf(s2));
-            result.add(s2);
+            s1 = slideShow.get(slideShow.indexOf(transition[1]));
+            result.add(transition[1]);
 
         }
         return result;
