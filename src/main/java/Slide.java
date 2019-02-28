@@ -10,6 +10,16 @@ public class Slide {
 
 
     public Slide(Photo pic1, Photo pic2){
+
+        /*if (pic1.isVertical){
+            try {
+                throw new Exception();
+            } catch (Exception e) {
+                System.out.println("There are two instances of a cell with different values!");
+                e.printStackTrace();
+            }
+        }*/
+
         this.pic1 = pic1;
         this.pic2 = pic2;
         isVertical = true;
