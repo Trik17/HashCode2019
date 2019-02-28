@@ -3,11 +3,11 @@
 public class Pizza extends Problem {
 
     public int dim_rows, dim_columns, l, h;
-    public char[][] matrix;
+    public char[][] charMatrix;
+    public Cell[][] matrix;
 
     public Pizza(String pathInput){
         super(pathInput);
-
     }
 
     public void setupProblem() {
@@ -22,13 +22,16 @@ public class Pizza extends Problem {
         l = Integer.parseInt(t2[2]);
         h = Integer.parseInt(Character.toString(t2[3].charAt(0)));
 
-        matrix = new char[dim_rows][dim_columns];
+        charMatrix = new char[dim_rows][dim_columns];
+        matrix = new Cell[dim_rows][dim_columns];
+
         char[] charArray;
 
         for (int i = 0; i < dim_rows; i++) {
             charArray = tokens[i+1].toCharArray();
             for (int j = 0; j < dim_columns; j++) {
-                matrix[i][j] = charArray[j];
+                charMatrix[i][j] = charArray[j];
+                matrix[i][j] = new Cell(i,j,charArray[j]);
             }
         }
 

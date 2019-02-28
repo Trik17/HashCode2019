@@ -52,7 +52,7 @@ public class Logic {
 
         for (int i = 0; i < prova.dim_rows; i++) {
             for (int j = 0; j < prova.dim_columns; j++) {
-                System.out.println(prova.matrix[i][j]);
+                System.out.println(prova.charMatrix[i][j]);
             }
         }
 
