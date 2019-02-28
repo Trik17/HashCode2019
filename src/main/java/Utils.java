@@ -31,7 +31,7 @@ public class Utils {
         while (copy_slideShow.size() - 1 > 0){
             transition[0] = s1;
             copy_slideShow.remove(s1);
-            int k = copy_slideShow.size();
+            int k = copy_slideShow.size()/4;
             count = 0;
             Slide s2 = copy_slideShow.get(0);
             while (count < k){
@@ -50,6 +50,7 @@ public class Utils {
             }
             s1 = slideShow.get(slideShow.indexOf(transition[1]));
             result.add(transition[1]);
+            System.out.println(result.size());
 
         }
         return result;
