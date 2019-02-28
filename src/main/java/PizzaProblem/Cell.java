@@ -1,3 +1,5 @@
+package PizzaProblem;
+
 public class Cell {
 
     public int x; //row

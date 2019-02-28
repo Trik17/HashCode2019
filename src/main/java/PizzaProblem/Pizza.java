@@ -1,4 +1,4 @@
-
+package PizzaProblem;
 
 public class Pizza extends Problem {
 

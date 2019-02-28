@@ -1,9 +1,10 @@
-import java.io.File;
+package PizzaProblem;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Logic {
-    //todo: Slice.java
+    //todo: PizzaProblem.Slice.java
 
     int countM, countT, countVisited = 0;
     Pizza pizza;
@@ -14,7 +15,7 @@ public class Logic {
         this.pizza = new Pizza(path);
         pizza.read(); //setup problem is already called inside this
 
-        //Cell initialPosition = getInitialPos();
+        //PizzaProblem.Cell initialPosition = getInitialPos();
         //int x =initialPosition.x;
         //int y = initialPosition.y;
         currentCell = getInitialPos();
@@ -103,7 +104,7 @@ Quindi, non ha senso chiedere come vengano passati gli oggetti, perché gli ogge
 
     public static void main (String args[]){
         /*System.out.println("Started");
-        Pizza prova = new Pizza(".\\HashCode19_prep\\d_big.in");
+        PizzaProblem.Pizza prova = new PizzaProblem.Pizza(".\\HashCode19_prep\\d_big.in");
         prova.read();
 
         for (int i = 0; i < prova.dim_rows; i++) {
