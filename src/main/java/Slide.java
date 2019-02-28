@@ -38,8 +38,8 @@ public class Slide {
     }
 
     public static int min(int n1, int n2, int n3){
-        return 0;
-        //todo
+        int smallest = Math.min(n1, Math.min(n2, n3));
+        return smallest;
     }
 
 }
