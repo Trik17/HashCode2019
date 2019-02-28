@@ -1,10 +1,10 @@
+import java.util.List;
+
 public class Slice extends SubMatrix {
 
     public int number_T = 0;
     public int number_M = 0;
-
-
-
+    public List<Cell> cells;
 
 
     public Slice(int col1, int row1, int col2, int row2, int dimcol, int dimrow, int number_T, int number_M) {
@@ -15,6 +15,7 @@ public class Slice extends SubMatrix {
         this.number_T = number_T;
         this.number_M = number_M;
     }
+    //todo costruttore più base & funzione per calcolare col1, etc...
 
 
 

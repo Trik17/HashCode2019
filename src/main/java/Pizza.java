@@ -16,7 +16,7 @@ public class Pizza extends Problem {
 
         delims = "[ ]";
         String[] t2 = tokens[0].split(delims);
-        System.out.println(t2[3].length());
+        //System.out.println(t2[3].length());
         dim_rows = Integer.parseInt(t2[0]);
         dim_columns = Integer.parseInt(t2[1]);
         l = Integer.parseInt(t2[2]);
