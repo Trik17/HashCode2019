@@ -18,6 +18,8 @@ public class Map {
         prova.read();
         Cell[][] matrix = prova.matrix;
         System.out.println(prova.h);
+        prova.h = 7;
+        System.out.println(prova.h);
         HashMap<Cell, TreeMap<Double, ArrayList<Cell>>> cells_map = new HashMap<>(matrix[0].length * matrix.length);
         for (int row = 0; row < matrix.length; row++) {
             for (int col = 0; col < matrix[0].length; col++) {
@@ -36,17 +38,14 @@ public class Map {
                         if(!(h_row == row && h_col == col)){
                             Cell h_cell =  matrix[h_row][h_col];
                             double distance = Cell.cellDistance(cell, h_cell);
-                            if (distance <= prova.h){
-                                if(dist_map.containsKey(distance)){
-                                    dist_map.get(distance).add(h_cell);
-                                }
-                                else {
-                                    ArrayList<Cell> cell_array = new ArrayList<>();
-                                    cell_array.add(h_cell);
-                                    dist_map.put(distance, cell_array);
-                                }
+                            if(dist_map.containsKey(distance)){
+                                dist_map.get(distance).add(h_cell);
                             }
-
+                            else {
+                                ArrayList<Cell> cell_array = new ArrayList<>();
+                                cell_array.add(h_cell);
+                                dist_map.put(distance, cell_array);
+                            }
 
                         }
 
