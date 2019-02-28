@@ -22,6 +22,14 @@ public class Photo {
         return res.size();
     }
 
+    public static int intersect(Photo p1, Photo p2){
+        // ritorna il numero  dei tag dell'intersezione delle 2 foto
+        HashSet<String> res = new HashSet<>();
+        res.addAll(p1.tags);
+        res.retainAll(p2.tags);
+        return res.size();
+    }
+
     @Override
     public boolean equals(Object obj) {
         if (this.id == ((Photo) obj).id) {
