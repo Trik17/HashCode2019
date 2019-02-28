@@ -9,11 +9,20 @@ public class Main {
         System.out.println("Hello");
         List<Photo> collection = prob.pictures;
         SlideShow ss = new SlideShow();
+        Photo verticalP = null;
         for(Photo picture : collection){
-            Photo verticalP;
             if(!picture.isVertical){
                 Slide s = new Slide(picture);
-                ss.add(s);
+                ss.slides.add(s);
+            }
+            else{
+                if(verticalP == null){
+                    verticalP = picture;
+                }
+                else {
+                    Slide s = new Slide(verticalP, picture);
+                    ss.slides.add(s);
+                }
             }
         }
 
