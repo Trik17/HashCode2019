@@ -44,11 +44,41 @@ public class Problem {
     }
 
     private void setupProblem(){
+        //todo
+        String delims = "[\n]";
+        //tokens sono le varie righe
+        String[] inputLines = this.input.split(delims);
+        int numPics = Integer.parseInt(inputLines[0]);
 
+        for (int i = 1; i < numPics+1; i++) {
+
+        }
+        delims = "[ ]";
+        String[] t2 = inputLines[0].split(delims);
+        dim_rows = Integer.parseInt(t2[0]);
+        dim_columns = Integer.parseInt(t2[1]);
+        l = Integer.parseInt(t2[2]);
+        h = Integer.parseInt(t2[3]);
+
+
+
+        charMatrix = new char[dim_rows][dim_columns];
+        matrix = new Cell[dim_rows][dim_columns];
+
+        char[] charArray;
+
+        for (int i = 0; i < dim_rows; i++) {
+            charArray = inputLines[i+1].toCharArray();
+            for (int j = 0; j < dim_columns; j++) {
+                charMatrix[i][j] = charArray[j];
+                matrix[i][j] = new Cell(i,j,charArray[j]);
+            }
+        }
+        System.out.println("Problem setted");
     };
 
     public Problem(){
-
+        this.path = ".\\Input\\a_example.txt";
     }
 
 
