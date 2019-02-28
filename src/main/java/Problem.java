@@ -9,6 +9,7 @@ import java.util.List;
 
 public class Problem {
 
+
     public String path;
     public String input;
     public List<Photo> pictures = new ArrayList<>();
