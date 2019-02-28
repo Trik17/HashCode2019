@@ -1,6 +1,7 @@
 public class Photo {
 
-    private int index;
+    private int id;
+    private boolean isVertical;
 
 
 }

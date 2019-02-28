@@ -5,5 +5,5 @@ public class SlideShow {
 
     List<Photo> pictures = new ArrayList<>();
 
-    
+
 }

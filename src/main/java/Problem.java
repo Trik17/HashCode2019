@@ -4,11 +4,13 @@ import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.List;
 
 public abstract class Problem {
 
     public String path;
     public String input;
+    public List<Photo> pictures;
 
     public void read(){
         try
@@ -38,7 +40,9 @@ public abstract class Problem {
         }
     }
 
-    public abstract void setupProblem();
+    private void setupProblem(){
+
+    };
 
 
     public Problem(String pathInput){
