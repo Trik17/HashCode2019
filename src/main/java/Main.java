@@ -17,7 +17,7 @@ public class Main {
         String d ="d_pet_pictures";
         String e ="e_shiny_selfies";
 
-        String currentInput = b;
+        String currentInput = d;
 
         Problem prob = new Problem(".\\Input\\"+currentInput+".txt");
         List<Slide> ss = new ArrayList<Slide>();
