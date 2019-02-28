@@ -87,12 +87,33 @@ public class Problem {
     }
 
     public void printInput(){
-        
+        for (int i = 0; i < pictures.size(); i++) {
+            System.out.println("\n");
+            String print;
+            if (pictures.get(i).isVertical){
+                print = "V";
+            }else {
+                print = "H";
+            }
+            print = print + Integer.toString(pictures.get(i).tags.size());
+            for (String s : pictures.get(i).tags) {
+                print = print + s;
+            }
+            System.out.println(print);
+        }
     }
 
 
     public Problem(String pathInput){
         this.path = pathInput;
+
+    }
+
+    public static void main (String args[]){
+        Problem p = new Problem();
+        p.read();
+
+        p.printInput();
 
     }
 }
