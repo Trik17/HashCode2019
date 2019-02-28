@@ -4,7 +4,7 @@ public class Pizza extends Problem {
 
     public int dim_rows, dim_columns, l, h;
     public char[][] charMatrix;
-    public Cell[][] matrix;
+    public static Cell[][] matrix;
 
     public Pizza(String pathInput){
         super(pathInput);
