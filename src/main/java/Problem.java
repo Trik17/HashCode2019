@@ -6,7 +6,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
 
-public abstract class Problem {
+public class Problem {
 
     public String path;
     public String input;
@@ -44,6 +44,10 @@ public abstract class Problem {
     private void setupProblem(){
 
     };
+
+    public Problem(){
+
+    }
 
 
     public Problem(String pathInput){
