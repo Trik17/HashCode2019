@@ -10,7 +10,8 @@ public class Pizza extends Problem {
         super(pathInput);
     }
 
-    public void setupProblem() {
+
+    public  void setupProblem() {
         String delims = "[\n]";
         String[] tokens = this.input.split(delims);
 
@@ -34,12 +35,6 @@ public class Pizza extends Problem {
                 matrix[i][j] = new Cell(i,j,charArray[j]);
             }
         }
-
-
-
     }
 
-    public void Check(){
-
-    }
 }
