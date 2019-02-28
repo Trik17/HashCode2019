@@ -22,7 +22,7 @@ public class Cell {
 
     public void setValue(char value) {
         if (value!='M' && value!='T'){
-            //todo
+            throw new IllegalArgumentException("Only Char, M or T.");
         }
         this.value = value;
     }
