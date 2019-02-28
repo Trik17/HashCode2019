@@ -4,13 +4,14 @@ import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Problem {
 
     public String path;
     public String input;
-    public List<Photo> pictures;
+    public List<Photo> pictures = new ArrayList<>();
     //String path= ".\\Input\\a_example.txt";
 
     public void read(){

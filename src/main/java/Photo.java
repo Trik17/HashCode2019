@@ -1,7 +1,11 @@
+import java.util.HashSet;
+
 public class Photo {
 
-    private int id;
-    private boolean isVertical;
+    public int id;
+    public boolean isVertical;
+    public HashSet<String > tags;
+
 
 
 }
