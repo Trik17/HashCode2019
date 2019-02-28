@@ -8,10 +8,8 @@ public class Slice extends SubMatrix {
     public List<Cell> cells;
     public Pizza pizza;
 
-
+    //ATTENZIONE A QUESTO COSTRUTTORE! METTE AUTOMATICAMENTE TUTTE LE CELLE SELEZIONATE COME isOccupied nella Pizza
     public Slice(int col1, int row1, int col2, int row2, int dimcol, int dimrow, int number_T, int number_M, Pizza pizza) {
-
-        //TODO: cotruttore inizializza una riga e una colonna con T o M
 
         super(col1, row1, col2, row2, dimcol, dimrow);
         this.cells = new ArrayList<>();
@@ -25,6 +23,24 @@ public class Slice extends SubMatrix {
 
         this.number_T = number_T;
         this.number_M = number_M;
+        this.pizza = pizza;
+    }
+
+    //questo non setta la prima cella come isOccupied
+    public Slice(Cell c) {
+
+        super(c.y, c.x, c.y, c.x, 1, 1);
+        this.cells = new ArrayList<>();
+
+        if (c.getValue()=='M'){
+            this.number_T = 0;
+            this.number_M = 1;
+        }
+        if (c.getValue()=='T'){
+            this.number_T = 1;
+            this.number_M = 0;
+        }
+
         this.pizza = pizza;
     }
     //todo costruttore più base & funzione per calcolare col1, etc...
@@ -59,6 +75,10 @@ public class Slice extends SubMatrix {
                 }
             }
        }
+       for(Cell i : cells){
+           pizza.matrix[i.x][i.y].isOccupied = true;
+       }
+
        for(Cell cell : toBeAdded){
            if(cell.getValue() == 'M'){
                number_M++;
