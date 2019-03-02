@@ -28,7 +28,7 @@ public class Utils {
         Slide s1 = slideShow.get(0);
         result.add(s1);
         int count;
-        int k = copy_slideShow.size()/32;
+        int k = copy_slideShow.size()/16;
         while (copy_slideShow.size() - 1 > 0){
             transition[0] = s1;
             if (copy_slideShow.contains(s1)){

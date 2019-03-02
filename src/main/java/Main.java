@@ -17,31 +17,59 @@ public class Main {
         String d ="d_pet_pictures";
         String e ="e_shiny_selfies";
 
-        String currentInput = a;// TODO usare questo per selezionare l'input
+        String currentInput = e;// TODO usare questo per selezionare l'input
 
         Problem prob = new Problem(".\\Input\\"+currentInput+".txt");
+
+        int max=-1;
+        Photo best=null;
         List<Slide> ss = new ArrayList<Slide>();
+
         prob.read();
         //System.out.println("Hello");
         List<Photo> collection = prob.pictures;
+        List<Photo> vertcollection = new ArrayList<>();
+        List<Photo> horcollection = new ArrayList<>();
+
+
+        for(Photo p : collection){
+            if(p.isVertical){
+                vertcollection.add(p);
+            }else{
+                horcollection.add(p);
+            }
+        }
+        int k = vertcollection.size()/8;
+        while(vertcollection.size() >1){
+            System.out.println(vertcollection.size());
+            Photo p = vertcollection.get(0);
+            vertcollection.remove(p);
+            max = -1;
+            int count = 0;
+            k = Math.min(k, vertcollection.size());
+            while(count < k){
+                Photo p1 = vertcollection.get(count);
+                int h = selectH(p,p1,0);
+                if(h > max){
+                    max = h;
+                    best = p1;
+                }
+                count++;
+
+            }
+            Slide sb = new Slide(p,best);
+            vertcollection.remove(best);
+            ss.add(sb);
+        }
+        System.out.println("oh");
 
         //SlideShow ss = new SlideShow();
-        Photo verticalP = null;
-        for(Photo picture : collection){
 
+        Photo verticalP = null;
+        for(Photo picture : horcollection){
             if(!picture.isVertical){
                 Slide s = new Slide(picture);
                 ss.add(s);
-            }
-            else{
-                if(verticalP == null){
-                    verticalP = picture;
-                }
-                else {
-                    Slide s = new Slide(verticalP, picture);
-                    verticalP = null;
-                    ss.add(s);
-                }
             }
         }
         ss = Utils.optimization(ss);
@@ -66,7 +94,13 @@ public class Main {
         } catch (IOException exc) {
             exc.printStackTrace();
         }
+    }
 
-
+    private static int selectH(Photo p, Photo p1, int i) {
+        switch(i){
+            case 0: return Photo.union(p,p1);
+            case 1: return Photo.intersect(p,p1);
+            default: return 0;
+        }
     }
 }
